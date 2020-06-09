@@ -1,0 +1,23 @@
+name: 'Get Version'
+author: 'Tom Henderson'
+description: 'Get the latest version by filtering git tags'
+branding:
+  icon: 'hash'
+  color: 'gray-dark'
+
+inputs:
+  prefix:
+    description: 'Tag prefix'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.prefix }}
+
+outputs:
+  latest:
+    description: 'The latest version number'
+  next:
+    description: 'The next version number'

@@ -1,0 +1,10 @@
+name: 'Serverless'
+author: 'Tom Henderson'
+description: 'Deploy a serverless project'
+branding:
+  icon: 'cloud-lightning'
+  color: 'green'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'

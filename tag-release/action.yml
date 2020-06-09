@@ -1,0 +1,21 @@
+name: 'Tag Repository'
+author: 'Tom Henderson'
+description: 'Tag a github repository'
+branding:
+  icon: 'tag'
+  color: 'gray-dark'
+
+inputs:
+  prefix:
+    description: 'Tag prefix'
+    required: true
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.prefix }}
+
+outputs:
+  tag:
+    description: 'The latest version number'
